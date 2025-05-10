@@ -9,8 +9,14 @@ use strategy\demo1\StrategyInterface;
 class Context{
 
     //维持一个抽象策略类的引用
-    private  $strategy;
+    private $strategy;
+    private $map;
     public function __construct(){
+        // 或者使用map方式实现
+        $this->map = [
+            'strategyA' => 'strategy\demo1\StrategyA',
+            'strategyB' => 'strategy\demo1\StrategyB'
+        ];
     }
 
     public function context(StrategyInterface $strategy): void
